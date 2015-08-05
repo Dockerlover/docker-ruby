@@ -10,7 +10,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 80F70E11F0F0D5F10CB20E62
  && echo "deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main" >> /etc/apt/sources.list
 # 安装ruby2.1
 RUN apt-get update && apt-get install -y ruby2.1 ruby2.1-dev && rm -rf /var/lib/apt/list/*
-# 重新配置bundle源
-RUN bundle config mirror.https://rubygems.org https://ruby.taobao.org
 # 更新gem源
 RUN gem sources -r https://rubygems.org/ && gem sources -a https://ruby.taobao.org/ && gem sources -l
+# 重新配置bundle源
+RUN gem install bundler && bundle config mirror.https://rubygems.org https://ruby.taobao.org
