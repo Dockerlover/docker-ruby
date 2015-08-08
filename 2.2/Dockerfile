@@ -10,7 +10,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 80F70E11F0F0D5F10CB20E62
  && echo "deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main" >> /etc/apt/sources.list
 # 安装ruby2.2
 RUN apt-get update && apt-get install -y build-essential ruby1.9.1-dev ruby2.2 ruby2.2-dev \
- && apt-get autoremove ruby1.9.1 && rm -rf /var/lib/apt/list/*
+ && apt-get autoremove -y ruby1.9.1 && rm -rf /var/lib/apt/list/*
 # 更新gem源
 RUN gem sources -r https://rubygems.org/ && gem sources -a https://ruby.taobao.org/ && gem sources -r http://rubygems.org/ && gem sources -l
 # 重新配置bundle源
