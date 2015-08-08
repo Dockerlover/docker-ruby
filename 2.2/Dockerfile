@@ -11,6 +11,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 80F70E11F0F0D5F10CB20E62
 # 安装ruby2.2
 RUN apt-get update && apt-get install -y build-essential ruby1.9.1-dev ruby2.2 ruby2.2-dev && rm -rf /var/lib/apt/list/*
 # 更新gem源
-RUN gem sources -r https://rubygems.org/ && gem sources -a https://ruby.taobao.org/ && gem sources -l
+RUN gem sources -r https://rubygems.org/ && gem sources -a https://ruby.taobao.org/ && gem sources -r http://rubygems.org/ && gem sources -l
 # 重新配置bundle源
 RUN gem install bundler && bundle config mirror.https://rubygems.org https://ruby.taobao.org
