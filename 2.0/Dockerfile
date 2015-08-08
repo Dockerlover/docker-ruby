@@ -6,7 +6,7 @@ MAINTAINER  liuhong1.happy@163.com
 ENV USER_NAME admin
 ENV SERVICE_ID ruby2.0
 # 安装ruby2.0
-RUN apt-get update && apt-get install -y ruby2.0 && rm -rf /var/lib/apt/list/*
+RUN apt-get update && apt-get install -y ruby1.9.1-dev ruby2.0 && rm -rf /var/lib/apt/list/*
 # 更新gem源
 RUN gem sources -r https://rubygems.org/ && gem sources -a https://ruby.taobao.org/ && gem sources -l
 # 重新配置bundle源
