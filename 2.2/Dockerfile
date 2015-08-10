@@ -9,7 +9,7 @@ ENV SERVICE_ID ruby2.2
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv 80F70E11F0F0D5F10CB20E62F5DA5F09C3173AA6 \
  && echo "deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main" >> /etc/apt/sources.list
 # 安装一些依赖包
-RUN apt-get update && apt-get install -y zlib1g-dev  libxml2 build-essential ruby1.9.1-dev && apt-get autoremove -y ruby1.9.1
+RUN apt-get update && apt-get install -y zlib1g-dev  libxml2  ruby1.9.1-dev && apt-get autoremove -y ruby1.9.1
 # 安装ruby2.2
 RUN apt-get update && apt-get install -y   ruby2.2 ruby2.2-dev && rm -rf /var/lib/apt/list/*
 # 更新gem源
